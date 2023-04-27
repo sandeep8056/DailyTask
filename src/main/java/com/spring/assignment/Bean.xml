@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans  xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> 
+        
+        
+        <bean id="e1" class="com.spring.learn.Exam">
+        <constructor-arg name="subject" value="Math"/>
+        <constructor-arg name="duration" value="2"/>
+        </bean>
+        
+        <!-- bean definitions here -->
+        
+        <!-- using setter injection -->
+		
+		<bean  id="sandeep" class="com.spring.learn.Student">
+		
+		<property name="id"  value="04"/>
+		<property name="studentName" value="Sandeep Yadav"/>
+		
+		<property name="contactNumber">
+		<list>
+				<value>9833126585</value>
+				<value>889898893</value>
+				<value>7575757575</value>
+		
+		</list>
+		</property>
+		<property name="exam" ref="e1"/>
+		
+		</bean>
+			
+			
+		<!-- using constructor injection -->
+		<bean  id="manish" class="com.spring.learn.Student">
+		
+		
+		<constructor-arg name="id" value="3"/>
+		<constructor-arg  name="studentName" value="Manish"/>
+		
+		<constructor-arg name="contactNumber">
+		<list>
+		<value>787874683</value>
+		<value>8890878478</value>
+		<value>7878678848</value>
+		</list>
+		
+		</constructor-arg>
+		
+		<constructor-arg  ref="e1"/>
+		
+		</bean>
+
+
+
+
+
+</beans>
